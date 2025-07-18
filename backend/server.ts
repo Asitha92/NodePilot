@@ -16,24 +16,20 @@ mongoose
 	.then(() => console.log('MongoDB Connected'))
 	.catch((err: unknown) => console.error('MongoDB connection error: ', err));
 
+const allowedOrigins = [process.env.CLIENT_BASE_URL, 'http://localhost:5173'];
+
 app.use(
 	cors({
 		origin: function (origin, callback) {
-			if (!origin || process.env.CLIENT_BASE_URL) {
+			if (!origin || allowedOrigins.includes(origin)) {
 				callback(null, true);
 			} else {
 				callback(new Error('Not allowed by CORS'));
 			}
 		},
-		credentials: true, // Required to allow cookies / auth headers
+		credentials: true,
 		methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
-		allowedHeaders: [
-			'Content-Type',
-			'Authorization',
-			'Cache-Control',
-			'Expires',
-			'Pragma',
-		],
+		allowedHeaders: ['Content-Type', 'Authorization'],
 	})
 );
 

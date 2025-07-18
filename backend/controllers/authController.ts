@@ -94,31 +94,3 @@ export const signOutUser = (_req: Request, res: Response) => {
 		message: 'Signed out successfully!',
 	});
 };
-
-// Auth Middleware
-export const authMiddleware = (
-	req: Request,
-	res: Response,
-	next: NextFunction
-) => {
-	const authHeader = req.headers['authorization'];
-	const token = authHeader && authHeader.split(' ')[1];
-
-	if (!token) {
-		return res.status(401).json({
-			success: false,
-			message: 'Unauthorized user!',
-		});
-	}
-
-	try {
-		const decoded = jwt.verify(token, JWT_SECRET);
-		req.user = decoded;
-		next();
-	} catch (error) {
-		res.status(401).json({
-			success: false,
-			message: 'Unauthorized user!',
-		});
-	}
-};

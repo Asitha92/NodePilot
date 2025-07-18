@@ -1,9 +1,4 @@
-import {
-	CHECK_AUTH,
-	SIGNIN_URL,
-	SIGNOUT_URL,
-	SIGNUP_URL,
-} from '../../constants';
+import { SIGNIN_URL, SIGNOUT_URL, SIGNUP_URL } from '../../constants';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import type { InitialState, FormData } from './types';
@@ -41,32 +36,6 @@ export const signInUser = createAsyncThunk(
 				withCredentials: true,
 			}
 		);
-		return response.data;
-	}
-);
-
-// commented out due to deploying to vercel - vercel doesn't support public suffix - cookies
-// export const checkAuth = createAsyncThunk(CHECK_AUTH, async () => {
-// 	const response = await axios.get(`${API_BASE_URL}/api/auth/checkAuth`, {
-// 		withCredentials: true,
-// 		headers: {
-// 			'Cache-Control': 'no-store, no-cache, must-revalidate proxy-revalidate',
-// 			Expires: '0',
-// 		},
-// 	});
-// 	return response.data;
-// });
-
-export const checkAuth = createAsyncThunk(
-	CHECK_AUTH,
-	async (token: string | null) => {
-		const response = await axios.get(`${API_BASE_URL}/api/auth/checkAuth`, {
-			headers: {
-				Authorization: `Bearer ${token}`,
-				'Cache-Control': 'no-store, no-cache, must-revalidate proxy-revalidate',
-				Expires: '0',
-			},
-		});
 		return response.data;
 	}
 );
@@ -125,19 +94,6 @@ const authSlice = createSlice({
 				state.isAuthenticated = false;
 				state.user = null;
 				state.token = null;
-			})
-			.addCase(checkAuth.pending, (state) => {
-				state.isLoading = true;
-			})
-			.addCase(checkAuth.fulfilled, (state, action) => {
-				state.isLoading = false;
-				state.isAuthenticated = action.payload.success;
-				state.user = action.payload.user ? action.payload.user : null;
-			})
-			.addCase(checkAuth.rejected, (state) => {
-				state.isLoading = false;
-				state.isAuthenticated = false;
-				state.user = null;
 			})
 			.addCase(signOutUser.pending, (state) => {
 				state.isLoading = true;

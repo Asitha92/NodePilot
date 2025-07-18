@@ -18,11 +18,22 @@ mongoose
 
 app.use(
 	cors({
-		origin: process.env.CLIENT_BASE_URL,
-		methods: ['GET', 'POST', 'DELETE', 'PUT', 'OPTIONS', 'PATCH'],
-		allowedHeaders: ['Content-Type', 'Authorization'],
-		optionsSuccessStatus: 200,
-		credentials: true,
+		origin: function (origin, callback) {
+			if (!origin || process.env.CLIENT_BASE_URL) {
+				callback(null, true);
+			} else {
+				callback(new Error('Not allowed by CORS'));
+			}
+		},
+		credentials: true, // Required to allow cookies / auth headers
+		methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
+		allowedHeaders: [
+			'Content-Type',
+			'Authorization',
+			'Cache-Control',
+			'Expires',
+			'Pragma',
+		],
 	})
 );
 

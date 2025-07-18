@@ -2,6 +2,8 @@
 
 A full-stack workflow management application built with Node.js, Express, MongoDB, and React.
 
+https://github.com/Asitha92/NodePilot/blob/b6ae34bedf8ffb9e93332491f3b4bd81e799b57b/1.png
+
 ## Features ✨
 - **Workflow Management**: Create, organize, and track workflows
 - **User Authentication**: Secure sign-in/sign-up with JWT

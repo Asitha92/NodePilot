@@ -5,7 +5,7 @@ import {
 	getSelectedWorkflow,
 	deleteWorkflow,
 	generateAIResponse,
-} from '../../controllers/workflowController.ts';
+} from '../../controllers/workflowController';
 
 const router = express.Router();
 

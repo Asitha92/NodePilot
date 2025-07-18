@@ -5,8 +5,8 @@ import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 
-import workflowRouter from './routes/workflow/workflowRoutes.ts';
-import authRouter from './routes/auth/authRoutes.ts';
+import workflowRouter from './routes/workflow/workflowRoutes';
+import authRouter from './routes/auth/authRoutes';
 
 const app = express();
 const PORT = process.env.PORT || 5000;

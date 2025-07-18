@@ -1,7 +1,7 @@
 import type { Request, Response, NextFunction } from 'express';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import User from '../models/User.ts';
+import User from '../models/User';
 
 // Extend Express Request interface to include 'user'
 declare global {

@@ -1,4 +1,4 @@
-import Workflow from '../models/WorkflowSchema.ts';
+import Workflow from '../models/WorkflowSchema';
 import type { Request, Response } from 'express';
 import OpenAI from 'openai';
 

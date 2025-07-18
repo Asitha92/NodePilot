@@ -16,14 +16,9 @@ mongoose
 	.then(() => console.log('MongoDB Connected'))
 	.catch((err: unknown) => console.error('MongoDB connection error: ', err));
 
-const allowedOrigins = [
-	'https://node-pilot-ten.vercel.app',
-	'http://localhost:5173',
-];
-
 app.use(
 	cors({
-		origin: allowedOrigins,
+		origin: process.env.CLIENT_BASE_URL,
 		methods: ['GET', 'POST', 'DELETE', 'PUT', 'OPTIONS', 'PATCH'],
 		allowedHeaders: [
 			'Content-Type',
@@ -35,8 +30,6 @@ app.use(
 		optionsSuccessStatus: 200,
 	})
 );
-
-app.options('*', cors());
 
 app.use(cookieParser());
 app.use(express.json());

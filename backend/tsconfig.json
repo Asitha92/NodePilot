@@ -1,15 +1,18 @@
 {
 	"compilerOptions": {
-		"target": "es6",
+		"target": "ES2020",
 		"module": "commonjs",
 		"moduleResolution": "node",
-		"sourceMap": true,
+		"rootDir": ".",
+		"outDir": "./dist",
 		"strict": true,
 		"esModuleInterop": true,
-		"noImplicitAny": true,
-		"outDir": "./dist",
-		"rootDir": "."
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"resolveJsonModule": true,
+		"types": ["node"],
+		"lib": ["ES2020"]
 	},
-	"include": ["./**/*"],
-	"exclude": ["node_modules"]
+	"include": ["./**/*.ts"],
+	"exclude": ["node_modules", "dist"]
 }

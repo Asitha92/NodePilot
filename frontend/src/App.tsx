@@ -49,7 +49,7 @@ function App() {
 				/>
 				<Route
 					path="*"
-					element={<Navigate to="/" />}
+					element={<Navigate to={SIGNIN_URL} />}
 				/>
 			</Routes>
 		</Router>

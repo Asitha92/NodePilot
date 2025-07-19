@@ -3,6 +3,11 @@
 A full-stack workflow management application built with Node.js, Express, MongoDB, and React.
 
 https://github.com/Asitha92/NodePilot/blob/b6ae34bedf8ffb9e93332491f3b4bd81e799b57b/1.png
+![image alt](https://github.com/Asitha92/NodePilot/blob/b6ae34bedf8ffb9e93332491f3b4bd81e799b57b/1.png)
+![image alt](https://github.com/Asitha92/NodePilot/blob/fe69d5b2b52676cbfe36b1e176c5fd465349f224/2.png)
+![image alt](https://github.com/Asitha92/NodePilot/blob/fe69d5b2b52676cbfe36b1e176c5fd465349f224/3.png)
+![image alt](https://github.com/Asitha92/NodePilot/blob/fe69d5b2b52676cbfe36b1e176c5fd465349f224/4.png)
+![image alt](https://github.com/Asitha92/NodePilot/blob/fe69d5b2b52676cbfe36b1e176c5fd465349f224/5.png)
 
 ## Features ✨
 - **Workflow Management**: Create, organize, and track workflows
@@ -74,32 +79,7 @@ VITE_CLIENT_BASE_URL=backend api url
 
 ## Project Structure
 
-NodePilot/
-├── backend/               # Backend server
-│   ├── controllers/       # Route controllers
-│   ├── models/            # MongoDB models
-│   ├── routes/            # API routes
-│   ├── server.ts           # Server entry point
-│   └── package.json
-│   └── vercel.json
-│
-├── frontend/              # Frontend React app
-│   ├── public/
-│   ├── src/
-│   │   ├── assets/        # images, svgs
-│   │   ├── configs/       # configurations
-│   │   ├── constants/     # constants
-│   │   ├── hooks/         # hooks
-│   │   ├── components/    # React components
-│   │   ├── pages/         # Application pages
-│   │   ├── routes/        # app routes(not used in here due to application size)
-│   │   ├── services/      # api calls(not used in here due to application size)
-│   │   ├── store/         # state management(redux toolkit not used due to application size)
-│   │   ├── utils/         # Utility functions
-│   │   └── app.tsx
-│   │   └── main.tsx       # React entry point
-│   └── package.json
-└── README.md
+![iamge alt](https://github.com/Asitha92/NodePilot/blob/fe69d5b2b52676cbfe36b1e176c5fd465349f224/6.png)
 
 ## API endpoints
 

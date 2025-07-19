@@ -50,6 +50,7 @@ export default function FlowCanvas() {
 	const [showSaveModal, setShowSaveModal] = useState(false);
 	const [workflowName, setWorkflowName] = useState('');
 
+	// hook to get AI response
 	const { runWorkflow, isResponseLoading } = useWorkflowRunner(
 		nodes,
 		edges,
@@ -58,10 +59,11 @@ export default function FlowCanvas() {
 
 	const onConnect = useCallback(
 		(connection: Connection | Edge) =>
-			setEdges((eds) => addEdge(connection, eds)),
+			setEdges((edges) => addEdge(connection, edges)),
 		[setEdges]
 	);
 
+	// add new Node to the canvas
 	const onAddNode = (type: CustomNodeTypes) => {
 		const id = nanoid();
 		let data: CustomNodeData;
@@ -116,6 +118,7 @@ export default function FlowCanvas() {
 		event.dataTransfer.dropEffect = 'move';
 	}, []);
 
+	//  handle drop - create node when dropping
 	const onDrop = useCallback(
 		(event: React.DragEvent) => {
 			event.preventDefault();
@@ -140,16 +143,18 @@ export default function FlowCanvas() {
 				},
 			};
 
-			setNodes((nds) => nds.concat(newNode));
+			setNodes((nodes) => nodes.concat(newNode));
 		},
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 		[reactFlowInstance]
 	);
 
+	// open dialog when node selected
 	const handleNodeClick = (_: React.MouseEvent, node: Node) => {
 		setSelectedNode(node as CustomNode);
 	};
 
+	// save workflow to backend
 	const handleSave = async () => {
 		if (!workflowName.trim()) {
 			alert('Please enter a workflow name');
@@ -179,6 +184,7 @@ export default function FlowCanvas() {
 		}
 	};
 
+	// load selected workflow
 	const handleLoadWorkflow = async (id: string) => {
 		try {
 			const res = await fetch(`${API_BASE_URL}/workflow/${id}`);

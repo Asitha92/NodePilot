@@ -2,7 +2,6 @@
 
 A full-stack workflow management application built with Node.js, Express, MongoDB, and React.
 
-https://github.com/Asitha92/NodePilot/blob/b6ae34bedf8ffb9e93332491f3b4bd81e799b57b/1.png
 ![image alt](https://github.com/Asitha92/NodePilot/blob/b6ae34bedf8ffb9e93332491f3b4bd81e799b57b/1.png)
 ![image alt](https://github.com/Asitha92/NodePilot/blob/fe69d5b2b52676cbfe36b1e176c5fd465349f224/2.png)
 ![image alt](https://github.com/Asitha92/NodePilot/blob/fe69d5b2b52676cbfe36b1e176c5fd465349f224/3.png)

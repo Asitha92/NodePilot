@@ -2,7 +2,10 @@
 
 A full-stack workflow management application built with Node.js, Express, MongoDB, and React.
 
-Please have look at live application : https://node-pilot-ten.vercel.app
+Please have look at live application
+https://node-pilot-ten.vercel.app
+Please sign up to use application(for now just use dummy data).
+Or use email: admin@gmail.com password: 1234
 ### Demo video
 Demo video: https://www.loom.com/share/8ab9be49459e4658b48f425fefaa2049
 
